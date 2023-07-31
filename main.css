@@ -1,0 +1,365 @@
+:root {
+    --blue: #2565AE;
+    --blue-lighter: #66D3FA;
+    --blue-light: #3C99DC;
+    --blue-lighest: #D5F3FE;
+    --blue-dark: #0F5298;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.nav-bar {
+    margin-top: 20px;
+    align-items: center;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-bar a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-family: lato;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.nav-bar a:first-child {
+    color: var(--blue-lighter);
+}
+
+.nav-bar a:hover {
+    color: var(--blue-lighter);
+}
+
+.nav-bar label {
+    color: white;
+    font-family: prompt;
+    font-size: 2rem;
+}
+
+.main {
+    opacity: 0;
+    height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s ease-in;
+}
+
+.weather {
+    background: rgba(255, 255, 255, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+input {
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 80%;
+    font-size: 1rem;
+    font-family: lato;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 7px white;
+}
+
+input::placeholder {
+    padding-left: 3px;
+    font-family: lato;
+    font-size: 1rem;
+    color: white;
+}
+
+button {
+    margin-left: 5px;
+    outline: none;
+    border: none;
+    font-family: lato;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    border: 2px solid var(--blue-lighter);
+    background-color: black;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: black;
+    background-color: var(--blue-lighter);
+}
+
+button:active {
+    letter-spacing: 3px;
+}
+
+hr {
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px var(--blue);
+    border: 2px solid var(--blue-light);
+}
+
+.main > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.weather {
+    margin-top: 10px;
+    width: 70%;
+    height: 100%;
+    margin-bottom: 50px;
+}
+
+.weather > div {
+    height: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.weather > div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    height: 60px;
+}
+
+.weather > div div label:first-child {
+    font-family: lato;
+    color: white;
+    font-size: 3rem;
+}
+
+.weather > div div label:nth-child(2) {
+    font-family: lato;
+    color: var(--blue-lighest);
+    font-size: 1rem;
+}
+
+#temp {
+    animation: glow 3s ease-in-out infinite;
+}
+
+.weather img {
+    height: 150px;
+}
+
+#three-bars {
+    border: none;
+    width: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    display: none;
+}
+
+#three-bars i {
+    font-size: 1rem;
+}
+
+#three-bars:hover {
+    color: var(--blue-lighter);
+}
+
+.menu-bar {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--blue-lighter);
+    width: 100%;
+    height: 50vh;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-evenly;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.menu-bar a {
+    font-family: lato;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: var(--blue-dark);
+    color: white;
+    text-decoration: none;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(102, 211, 250, 0.8);
+      }
+      25% {
+        text-shadow: 0 0 20px rgba(60, 153, 220, 0.8);
+      }
+      50% {
+        text-shadow: 0 0 10px rgba(213, 243, 254, 0.8);
+      }
+      25% {
+        text-shadow: 0 0 20px rgba(60, 153, 220, 0.8);
+      }
+      0% {
+        text-shadow: 0 0 10px rgba(102, 211, 250, 0.8);
+      }
+  }
+
+
+@media screen and (max-width: 770px) {
+
+    .nav-bar {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    hr {
+        
+        margin-top: 25px;
+    }
+    #three-bars {
+
+        display: block;
+    }
+
+    #three-bars i {
+
+        font-size: 1.5rem;
+    }
+}
+
+
+@media screen and (max-width: 920px) {
+    .search {
+        width: 98%;
+    }
+
+    .weather {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 581px) {
+
+    .main {
+        height: 1000px;
+    }
+
+    .weather > div {
+        margin: 10px 0;
+    }
+
+    .weather > div div:nth-child(1)  {
+        order: 4;
+    }
+    
+    .weather > div div:nth-child(2)  {
+        order: 1;
+    }
+    
+    .weather > div div:nth-child(3)  {
+        order: 5;
+    }
+    
+    .weather > div div:nth-child(4)  {
+        order: 3;
+    }
+    
+    .weather > div div:nth-child(5)  {
+        order: 2;
+    }
+    
+    .weather > div div:nth-child(6)  {
+        order: 6;
+    }
+
+    .search button {
+        width: 98%;
+        margin: 0;
+        height: 60px;
+        margin-top: 5px;
+    }
+
+    .search input {
+        margin: 0;
+        width: 94%;
+        height: 60px;
+    }
+
+    .search {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 125px;
+        flex-direction: column;
+    }
+ }
+
+@media screen and (max-width: 770px) {
+
+    .nav-bar a {
+        display: none;
+    }
+
+    hr {
+        margin-top: 0;
+    }
+}
+
+@font-face {
+    font-family: prompt;
+    src: url(Prompt-Bold.ttf);
+}
+
+@font-face {
+    font-family: lato;
+    src: url(Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: bravo;
+    src: url(BravoSC.otf);
+}
+
+@font-face {
+    font-family: bravo2;
+    src: url(BravoSCT.otf);
+}
